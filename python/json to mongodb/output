@@ -1,0 +1,4 @@
+$ python3 json-mongodb.py sample.json
+Pinged your deployment. You successfully connected to MongoDB!
+# of documents inserted: 6893
+

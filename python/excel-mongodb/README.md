@@ -1,0 +1,1 @@
+The Excel Files used in this project are from WHO Air Pollution Database. These files have varying column and data structures. After data from all files are wrangled, they are joined and further transformed and then uploaded to MongoDB Atlas cluster.

@@ -1,6 +1,6 @@
 # Data Engineering
 
-This repository contains various projects as part of portfolio as a Data Engineer. It demostrates several ETL processes implemented using Python, Apache PySpark, MongoDB, PostgreSQL, etc.
+This repository contains various projects that I have developed as part of portfolio as a Data Engineer. It demostrates several ETL processes implemented using Python, Apache PySpark, MongoDB, PostgreSQL, etc.
 
 1. [Python](https://github.com/PrathameshTanavade/Data-Engineering/tree/main/python)
    1. [CSV to JSON](https://github.com/PrathameshTanavade/Data-Engineering/tree/main/python/csv-json)

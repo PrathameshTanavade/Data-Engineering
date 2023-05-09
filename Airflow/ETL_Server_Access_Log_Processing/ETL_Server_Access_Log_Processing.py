@@ -28,26 +28,26 @@ dag=DAG(
 
 download=BashOperator(
         task_id='download',
-        bash_command="wget 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Apache%20Airflow/Build%20a%20DAG%20using%20Airflow/web-server-access-log.txt' -O '/home/project/airflow/dags/serverlog.txt'",
+        bash_command="wget 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Apache%20Airflow/Build%20a%20DAG%20using%20Airflow/web-server-access-log.txt'",
         dag=dag,
         )
 
 extract=BashOperator(
         task_id='extract',
-        bash_command="",
+        bash_command='cut -f1,4 -d"#" web-server-access-log.txt > extracted.txt',
         dag=dag,
         )
 
 
 transform=BashOperator(
         task_id='transform',
-        bash_command="",
+        bash_command="tr [:lower:] [:upper:] < extracted.txt > transformed.txt",
         dag=dag,
         )
 
 load=BashOperator(
         task_id='load',
-        bash_command="",
+        bash_command="zip log.zip transformed.txt",
         dag=dag,
         )
 

@@ -1,5 +1,11 @@
+
+
+
+
 import random
 from faker.providers import BaseProvider
+import time
+
 
 class PizzaProvider(BaseProvider):
     def pizza_name(self):
@@ -50,21 +56,31 @@ class PizzaProvider(BaseProvider):
             max_toppings_in_pizza=3,
         ):
 
-
+        print(FakerInstance)
         shop= FakerInstance.pizza_shop()
         
         pizzas=[]
-        
-        for pizza in range(random.randint(0,max_toppings_in_pizza)):
-            toppings.append(FakerInstance.pizza_topping())
-        
-        pizzas.append(
-            {
-                "pizzaName":FakerInstance.pizza_name(),
-                "additionalToppings":toppings,
-            }
-        )
-        ]
+        for pizza in range(random.randint(1, max_pizza_in_order)):
+            # Each Pizza can have 0-5 additional toppings on it
+            toppings = []
+            for topping in range(random.randint(0, max_toppings_in_pizza)):
+                toppings.append(FakerInstance.pizza_topping())
+            pizzas.append(
+                {
+                    "pizzaName": FakerInstance.pizza_name(),
+                    "additionalToppings": toppings,
+                }
+            )       
+
+         
+
+
+            
+          
+  
+
+
+       
 
         message={
             "id":ordercount,

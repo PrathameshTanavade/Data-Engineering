@@ -7,20 +7,43 @@ MONGODB_DATABASE=os.environ["MONGODB_DATABASE"]
 MONGODB_COLLECTION=os.environ["MONGODB_COLLECTION"]
 
 from pyspark.sql import SparkSession
-from pyspark.sql.types import StructType, IntergerType, StringType
+from pyspark.sql.types import StructType, IntergerType, StringType, TimestampType
 from pyspark.sql.functions import *
 
 
 
 spark=SparkSession.builder\
         .appName("Satellite Communication Data Pipeline")\
-        .config("spark.jars.packages","org.mongodb.spark:mongo-spark-connector:10.0.5,org.postgresql:postgresql:42.6.0")\
+        .config("spark.jars.packages","org.mongodb.spark:mongo-spark-connector:10.0.5")\
         .getOrCreate()
+
+schema= StructType()\
+        .add("datetime", TimestampType())\
+        .add("remoteId", StringType())\
+        .add("beamId", IntegerType())\
+        .add("beamName", StringType())\
+        .add("satLong", IntegerType())\
+        .add("fwdModCodId", StringType())\
+        .add("fwdSNR", IntegerType())\
+        .add("packetsLost", IntegerType())\
+        .add("latitude", IntegerType())\
+        .add("longitude", IntegerType())\
+        .add("rxFreq", IntegerType())\
+        .add("txFreq", IntegerType())\
+        .add("fwdBitRate", IntegerType())\
+        
+
+
+
 
 lines=spark\
         .readStream\
-        .format
-
+        .format("mongodb")\
+        .option("connection.uri",MONGODB_URI)
+        .option("database",MONGODB_DATABASE)
+        .option("collection",MONGODB_RAW_COLLECTION)\
+        .schema(schema)
+        .load()
 
 
 

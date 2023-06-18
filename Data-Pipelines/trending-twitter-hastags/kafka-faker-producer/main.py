@@ -5,8 +5,8 @@ topic_name="tweet"
 
 producer=KafkaProducer(
         bootstrap_servers="localhost:9092",
-        value_serializer=lambda v:json.dumps(v).encode('ascii'),
-        key_serializer=lambda v: json.dumps(v).encode('ascii')
+        value_serializer=lambda v:json.dumps(v).encode('utf-8'),
+        key_serializer=lambda v: json.dumps(v).encode('utf-8')
         )
 
 
@@ -18,7 +18,7 @@ fake=Faker()
 fake.add_provider(tweet)
 i=0
 
-while i<100:
+while i<10000:
     message,key=tweet.produce_msg(
             i,
             fake,
@@ -29,9 +29,9 @@ while i<100:
                   key=key,
                   value=message)
 
-    time.sleep(2)
+    time.sleep(0.1)
 
-    if(i%100)==0:
+    if(i%10000)==0:
         producer.flush()
     i=i+1
 

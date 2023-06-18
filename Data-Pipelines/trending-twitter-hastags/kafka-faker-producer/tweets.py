@@ -20,9 +20,10 @@ class tweet(BaseProvider):
         
         def hashtag():
 
-                wordlist=["iloveu","michelle","tigger","sunshine","chocolate","anthony","friends","purple","angel","fcup","butterfly","jordan","fuckyou","justin",\
-                            "liverpool","tushy","football","loveme","secret","jennifer","joshua","carlos","superman","playboy",\
-                            "bubbles","hannah","loveyou","pretty","basketball","angels","flower" ]
+                wordlist=["sunshine","chocolate","friends","purple","angel",\
+                          "fcup","butterfly","fuckyou","liverpool","tushy",\
+                            "football","secret","superman","playboy","loveyou",\
+                            "pretty","basketball","angels","flower","beast" ]
                 max_hashtags=5
                 hashtags=[]
                 hashtag_dict={}

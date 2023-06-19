@@ -46,7 +46,7 @@ df=spark\
             explode(col("json.entities.hashtags.text")).alias("hashtag"),\
             col("json.place.name").alias("city")
            )\
-    .groupby(window(df.created_timestamp, "60 seconds" , "60 seconds"),df.hashtag,df.city).count().orderBy('window')\
+    .groupby(window(col("created_timestamp"), "60 seconds" , "60 seconds"),col("hashtag"),col("city")).count().orderBy('window')\
     .writeStream\
         .format("mongodb")\
         .option("checkpointlocation","/tmp/pyspark")\

@@ -8,30 +8,37 @@
 
 ```
 {
-    {
-        'created_at': 'Wed Jun 28 00:31:23  2023', 
-        'id_str': 4840, 
-        'text': 'Almost identify those. Three second him computer.\nClaim bed rest strong. Policy century mother certainly.', 
-        'user': {
-            'id': 2631, 
-            'name': 'Michele Wilson', 
-            'screen_name': 'hannah77'
+    'created_at': 'Wed Jun 28 00:31:23  2023', 
+    'id_str': 5696, 
+    'text': 'Level country position reason none compare Mr. Assume plant person accept bank green draw treatment.', 
+    'user': {
+        'id': 9870, 
+        'name': 'Ariel Graves', 
+        'screen_name': 'hruiz'
+        }, 
+    'entities': {
+        'hashtags': [
+            {
+                'text': 'sunshine', 
+                'indices': [19, 34]
             }, 
-        'entities': {
-            'hashtags': [
-                {
-                    'text': 'chocolate', 
-                    'indices': [67, 40]
-                }
-                
-                ]
+            {
+                'text': 'liverpool', 
+                'indices': [90, 1]
             }, 
-        'place': {
-            'place_type': 'city', 
-            'country_code': 'US', 
-            'country': 'United States', 
-            'name': 'Mississippi'}
-    }
+            {
+                'text': 'football', 
+                'indices': [38, 99]
+            }
+            ]
+        }, 
+    'place': {
+        'place_type': 'city', 
+        'country_code': 'US', 
+        'country': 'United States', 
+        'name': 'Texas'
+        }
+}
 ```
 
 The structure of tweet data is the same as described in [twitter API documentation](https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/object-model/example-payloads). Fields that are irrelevant to this project are ommitted but the structure of relevant fields have not been altered keeping data in the original format.

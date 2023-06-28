@@ -10,6 +10,21 @@ Airflow is used to schedule batch processing spark-jobs at per hour rate due to 
 
 ## Kafka - Generator
 ```
+{
+    'datetime': '2023-06-27 22:57:11', 
+    'remoteId': 'C1710',
+    'beamId': 136,
+    'beamName': 'BeamS07', 
+    'satLong': -129.2, 
+    'fwdModCodId': [10], 
+    'fwdSNR': 5.6, 
+    'packetsLost': 315, 
+    'latitude': 60.4, 
+    'longitude': -113.8, 
+    'rxFreq': 12200150, 
+    'txFreq': 14700580, 
+    'fwdBitRate': 14.0
+    }
 ```
 
 ## Dashboard

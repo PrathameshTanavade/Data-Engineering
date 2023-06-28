@@ -28,4 +28,4 @@ Airflow is used to schedule batch processing spark-jobs at per hour rate due to 
 ```
 
 ## Dashboard
-![]()
+![](/media/Prathamesh's%20Dashboard.png)
